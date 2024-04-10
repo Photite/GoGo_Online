@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/home/main",
+    "pages/schedule/main",
+    "pages/mine/main",
+    "pages/login/main",
+    "pages/grade/main",
+    "pages/protocol/main",
+    "pages/user-info/main",
+    "pages/attendance/main",
+    "pages/exam-time/main",
+    "pages/usual-grade/main",
+    "pages/calendar/main",
+    "pages/more/main",
+    "pages/about/main"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "backgroundColor": "#fff",
+    "selectedColor": "#363636",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/main",
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home-active.png"
+      },
+      {
+        "text": "课表",
+        "pagePath": "pages/schedule/main",
+        "iconPath": "static/tabs/grid.png",
+        "selectedIconPath": "static/tabs/grid-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/main",
+        "iconPath": "static/tabs/user.png",
+        "selectedIconPath": "static/tabs/user-active.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "usingComponents": {}
+}

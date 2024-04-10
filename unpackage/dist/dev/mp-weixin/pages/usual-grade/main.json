@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "平时成绩",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "loader-circle": "/components/LoaderCircle"
+  }
+}

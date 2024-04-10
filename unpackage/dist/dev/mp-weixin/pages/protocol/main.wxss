@@ -1,0 +1,32 @@
+
+.main {
+  box-sizing: border-box;
+  height: 100vh;
+  background: white;
+  overflow: hidden;
+}
+.icon-protocol {
+  font-size: 100rpx;
+}
+.protocol {
+  position: relative;
+  font-size: 40rpx;
+}
+.protocol::after {
+  content: "";
+  position: absolute;
+  bottom: -10rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 180rpx;
+  height: 12rpx;
+  border-radius: 5rpx;
+  background: #5d97f7;
+}
+._p {
+  margin-bottom: 40rpx;
+  text-align: justify;
+  color: #999999;
+}
+

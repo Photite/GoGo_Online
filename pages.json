@@ -1,0 +1,152 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/main",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/schedule/main",
+      "style": {
+        "navigationBarTitleText": "课表",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/mine/main",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/login/main",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/grade/main",
+      "style": {
+        "navigationBarTitleText": "成绩"
+      }
+    },
+    {
+      "path": "pages/protocol/main",
+      "style": {
+        "navigationBarTitleText": "协议",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/user-info/main",
+      "style": {
+        "navigationBarTitleText": "个人信息",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/attendance/main",
+      "style": {
+        "navigationBarTitleText": "考勤信息",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/exam-time/main",
+      "style": {
+        "navigationBarTitleText": "考试时间",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/usual-grade/main",
+      "style": {
+        "navigationBarTitleText": "平时成绩",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/calendar/main",
+      "style": {
+        "navigationBarTitleText": "校历",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/more/main",
+      "style": {
+        "navigationBarTitleText": "更多信息",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/about/main",
+      "style": {
+        "navigationBarTitleText": "关于本程序",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5d97f7",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "backgroundColor": "#fff",
+    "selectedColor": "#363636",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/main",
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home-active.png"
+      },
+      {
+        "text": "课表",
+        "pagePath": "pages/schedule/main",
+        "iconPath": "static/tabs/grid.png",
+        "selectedIconPath": "static/tabs/grid-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/main",
+        "iconPath": "static/tabs/user.png",
+        "selectedIconPath": "static/tabs/user-active.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "uniIdRouter": {},
+  "navigateToMiniProgramAppIdList": [
+    "wx7a674884ec88d424"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "考试时间",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

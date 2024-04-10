@@ -1,0 +1,1 @@
+<view class="_div"><block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="key" wx:key="key"><view class="_div"><image class="mb-1" style="width:100%;" mode="widthFix" src="{{item}}" data-event-opts="{{[['tap',[['preview',[key]]]]]}}" bindtap="__e"></image></view></block></view>

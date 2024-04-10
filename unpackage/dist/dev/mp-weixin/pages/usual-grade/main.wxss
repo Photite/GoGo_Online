@@ -1,0 +1,27 @@
+
+.main.data-v-c48ebbd6 {
+  min-height: 100vh;
+}
+.card.data-v-c48ebbd6 {
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 20rpx #ececec;
+}
+.grid.data-v-c48ebbd6 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+}
+.label.data-v-c48ebbd6 {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.items.data-v-c48ebbd6 {
+  transition: all 0.3s;
+}
+.show.data-v-c48ebbd6 {
+  max-height: 300px;
+}
+.hide.data-v-c48ebbd6 {
+  max-height: 0;
+}
+

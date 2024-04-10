@@ -1,0 +1,39 @@
+
+.main.data-v-7454b298 {
+  height: 100vh;
+}
+.logo.data-v-7454b298 {
+  width: 22%;
+  margin-bottom: 35rpx;
+  border-radius: 15rpx;
+  box-shadow: 0 0 40rpx #e6e6e6;
+}
+.beta.data-v-7454b298 {
+  margin-left: 12rpx;
+  padding: 4rpx 10rpx;
+  background-color: #e7e7e7;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  color: #b4b4b4;
+}
+.cell.data-v-7454b298 {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+.cell.data-v-7454b298:last-child {
+  border: none;
+}
+.iconfont.data-v-7454b298 {
+  font-size: 40rpx;
+}
+button.data-v-7454b298 {
+  margin: 0;
+  padding: 30rpx;
+  line-height: normal;
+  border-radius: 0;
+  font-size: 30rpx;
+}
+button.data-v-7454b298::after {
+  border: none;
+}
+

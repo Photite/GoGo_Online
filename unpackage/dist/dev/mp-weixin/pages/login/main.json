@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "loader-line": "/components/LoaderLine"
+  }
+}

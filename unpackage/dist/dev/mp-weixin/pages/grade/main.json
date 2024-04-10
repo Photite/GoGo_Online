@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "成绩",
+  "usingComponents": {
+    "loader-circle": "/components/LoaderCircle"
+  }
+}

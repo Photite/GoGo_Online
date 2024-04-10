@@ -1,0 +1,1 @@
+<view class="main _div data-v-dc85809e"><block wx:for="{{info}}" wx:for-item="item" wx:for-index="key" wx:key="key"><view class="item flex align-center justify-between bg-white p-3 _div data-v-dc85809e"><view class="gray _div data-v-dc85809e">{{item.label}}</view><view class="_div data-v-dc85809e">{{item.value}}</view></view></block></view>

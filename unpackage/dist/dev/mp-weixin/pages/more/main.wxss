@@ -1,0 +1,19 @@
+
+.main.data-v-6422ea8a {
+  padding: 35rpx 30rpx;
+  background: white;
+  font-size: 28rpx;
+}
+.url.data-v-6422ea8a {
+  font-size: 26rpx;
+}
+.img.data-v-6422ea8a {
+  box-shadow: 0 0 20rpx #ececec;
+}
+.recruitment.data-v-6422ea8a {
+  border-radius: 15rpx;
+  color: #aaaaaa;
+  background: #ececec;
+  line-height: 35rpx;
+}
+

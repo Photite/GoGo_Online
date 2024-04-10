@@ -1,0 +1,21 @@
+
+.main.data-v-05294394 {
+  height: 100vh;
+  font-size: 28rpx;
+}
+.item.data-v-05294394 {
+  border-bottom: 1rpx solid #ececec;
+}
+.item.data-v-05294394:last-child {
+  border: none;
+}
+.label.data-v-05294394,
+.value.data-v-05294394 {
+  width: 50%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.value.data-v-05294394 {
+  text-align: right;
+}
+

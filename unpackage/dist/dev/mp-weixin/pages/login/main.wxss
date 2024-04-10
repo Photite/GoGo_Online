@@ -1,0 +1,36 @@
+
+.main.data-v-b5f31b50 {
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-back.data-v-b5f31b50 {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  font-size: 55rpx;
+}
+.form.data-v-b5f31b50 {
+  width: 60%;
+  -webkit-transform: translateY(-50rpx);
+          transform: translateY(-50rpx);
+}
+.input-icon.data-v-b5f31b50 {
+  font-size: 45rpx;
+}
+.input-invalid.data-v-b5f31b50 {
+  color: #ff9595;
+}
+.input-item.data-v-b5f31b50 {
+  width: 100%;
+  border-bottom: 1rpx solid #ddd;
+}
+.login-btn.data-v-b5f31b50 {
+  width: 100%;
+  color: #fff;
+  background: #4285f4;
+  font-size: 32rpx;
+}
+

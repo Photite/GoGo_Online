@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "考勤信息",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "loader-circle": "/components/LoaderCircle"
+  }
+}
