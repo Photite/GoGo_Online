@@ -5,7 +5,12 @@ const {get} = request
 
 // 登录
 export function login(data) {
-    return post(`/login`, data)
+    return post(`/user/login`, data)
+}
+
+// 发送订阅消息请求
+export function sendSubscribeMessage(data) {
+    return post(`/reminders/createReminder`, data)
 }
 
 // 学生信息

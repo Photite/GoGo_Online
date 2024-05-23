@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.vue?vue&type=script&lang=js& */ 72);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _main_vue_vue_type_style_index_0_id_b5f31b50_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main.vue?vue&type=style&index=0&id=b5f31b50&scoped=true&lang=css& */ 74);
-/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 38);
+/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 36);
 
 var renderjs
 
@@ -144,7 +144,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
-var _api = __webpack_require__(/*! @/request/api */ 34);
+var _api = __webpack_require__(/*! @/request/api */ 56);
 var _utils = __webpack_require__(/*! @/utils */ 33);
 //
 //
@@ -231,7 +231,7 @@ var _utils = __webpack_require__(/*! @/utils */ 33);
 //
 var LoaderLine = function LoaderLine() {
   __webpack_require__.e(/*! require.ensure | components/LoaderLine */ "components/LoaderLine").then((function () {
-    return resolve(__webpack_require__(/*! @/components/LoaderLine */ 146));
+    return resolve(__webpack_require__(/*! @/components/LoaderLine */ 154));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var inputs = [{
@@ -315,11 +315,11 @@ var _default = {
     },
     login: function login() {
       var _this2 = this;
-      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
         var loginData, _yield$stuLogin, code, msg, info, res, schedule, start, data, time;
-        return _regenerator.default.wrap(function _callee$(_context) {
+        return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
                 // 显示加载动画
                 _this2.loading = true;
@@ -331,35 +331,101 @@ var _default = {
                   eduUsername: 1008521120406,
                   eduPassword: "Dd795613842"
                 };
-                _context.next = 4;
+                _context2.next = 4;
                 return (0, _api.stuLogin)(loginData);
               case 4:
-                _yield$stuLogin = _context.sent;
+                _yield$stuLogin = _context2.sent;
                 code = _yield$stuLogin.code;
                 msg = _yield$stuLogin.msg;
                 if (!(code === "1000")) {
-                  _context.next = 43;
+                  _context2.next = 45;
                   break;
                 }
-                _context.next = 10;
+                uni.login({
+                  "provider": "weixin",
+                  "onlyAuthorize": true,
+                  // 微信登录仅请求授权认证
+                  success: function success(res) {
+                    return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+                      var loginTmp, logininfo;
+                      return _regenerator.default.wrap(function _callee$(_context) {
+                        while (1) {
+                          switch (_context.prev = _context.next) {
+                            case 0:
+                              console.log(res.code);
+                              loginTmp = {
+                                "code": res.code,
+                                "openId": "",
+                                "eduUsername": loginData.eduUsername,
+                                "eduPassword": loginData.eduPassword
+                              };
+                              _context.next = 4;
+                              return (0, _api.login)(loginTmp);
+                            case 4:
+                              logininfo = _context.sent;
+                              if (logininfo.code === "1000") {
+                                console.log("登录成功");
+                              } else {
+                                uni.showToast({
+                                  title: logininfo.msg,
+                                  icon: 'none'
+                                });
+                              }
+                            case 6:
+                            case "end":
+                              return _context.stop();
+                          }
+                        }
+                      }, _callee);
+                    }))();
+                  }
+                });
+                _context2.next = 11;
                 return (0, _api.getStudentInfo)(loginData);
-              case 10:
-                info = _context.sent;
+              case 11:
+                info = _context2.sent;
                 if (!(info.code === "1000")) {
-                  _context.next = 40;
+                  _context2.next = 42;
                   break;
                 }
                 console.log("获取学生信息成功");
-                _context.next = 15;
+                // const res = await getSchedule(loginData)
+                // if (res.code === "1000") {
+                //   console.log("获取课程表成功")
+                //   // 创建一个空的二维数组，其中每个元素代表一天的课程表
+                //   let schedule = Array(10).fill().map(() => Array(7).fill().map(() => ({course: []})));
+                //
+                //   res.data.forEach(course => {
+                //     let dayInWeek = course.dayInWeek - 1; // 确保 dayInWeek 的值是从0（代表星期一）到6（代表星期日）
+                //     let startLesson = course.lesson.start - 1;
+                //     let endLesson = course.lesson.end - 1;
+                //
+                //     if (dayInWeek >= 0 && dayInWeek < 7 && startLesson >= 0 && endLesson < 10) { // 修改这里的条件，使其可以处理星期一到星期日的数据
+                //       for (let i = startLesson; i <= endLesson; i++) {
+                //         schedule[i][dayInWeek].course.push({
+                //           name: course.name,
+                //           teacher: course.teacher,
+                //           room: course.room,
+                //           code: course.code,
+                //           weeks: course.weekAsMinMax.map(week => Array.from({length: week.end - week.start + 1}, (_, i) => i + week.start)),
+                //           weekEachLesson: course.weekEachLesson,
+                //         });
+                //       }
+                //     } else {
+                //       console.log(`课程 ${course.name} 的时间信息超出了课程表的范围`);
+                //     }
+                //   });
+                //   console.log(schedule)
+                //   console.log(info.data)
+                _context2.next = 16;
                 return (0, _api.getSchedule)(loginData);
-              case 15:
-                res = _context.sent;
+              case 16:
+                res = _context2.sent;
                 if (!(res.code === "1000")) {
-                  _context.next = 37;
+                  _context2.next = 39;
                   break;
                 }
                 console.log("获取课程表成功");
-                // 创建一个空的二维数组，其中每个元素代表一天的课程表
                 schedule = Array(10).fill().map(function () {
                   return Array(7).fill().map(function () {
                     return {
@@ -368,25 +434,23 @@ var _default = {
                   });
                 });
                 res.data.forEach(function (course) {
-                  var dayInWeek = course.dayInWeek - 1; // 确保 dayInWeek 的值是从0（代表星期一）到6（代表星期日）
-                  var startLesson = course.lesson.start - 1;
-                  var endLesson = course.lesson.end - 1;
+                  var dayInWeek = course.dayInWeek - 1;
+                  var startLesson = course.lessonStart - 1;
+                  var endLesson = course.lessonEnd - 1;
                   if (dayInWeek >= 0 && dayInWeek < 7 && startLesson >= 0 && endLesson < 10) {
-                    // 修改这里的条件，使其可以处理星期一到星期日的数据
                     for (var i = startLesson; i <= endLesson; i++) {
                       schedule[i][dayInWeek].course.push({
                         name: course.name,
                         teacher: course.teacher,
                         room: course.room,
                         code: course.code,
-                        weeks: course.weekAsMinMax.map(function (week) {
-                          return Array.from({
-                            length: week.end - week.start + 1
-                          }, function (_, i) {
-                            return i + week.start;
-                          });
+                        weeks: Array.from({
+                          length: course.weekEnd - course.weekStart + 1
+                        }, function (_, i) {
+                          return i + course.weekStart;
                         }),
-                        weekEachLesson: course.weekEachLesson
+                        weekEachLesson: course.weekEachLesson,
+                        weekType: course.weekType
                       });
                     }
                   } else {
@@ -400,10 +464,10 @@ var _default = {
                 uni.setStorageSync('user', loginData);
                 uni.setStorageSync('info', info.data.info);
                 uni.setStorageSync('schedule', schedule);
-                _context.next = 29;
+                _context2.next = 30;
                 return (0, _api.getTermStart)(loginData);
-              case 29:
-                start = _context.sent;
+              case 30:
+                start = _context2.sent;
                 if (start.code === "1000") {
                   console.log(start.data.start);
                   data = (0, _utils.getTodayInfo)(start.data.start);
@@ -418,27 +482,31 @@ var _default = {
                 }
                 time = uni.getStorageSync('termStartDate');
                 console.log("这是登录时获取的学期开始日期" + time);
+                uni.showToast({
+                  title: '登录成功',
+                  icon: 'success'
+                });
                 console.log("跳转前的准备");
                 uni.navigateBack();
-                _context.next = 38;
+                _context2.next = 40;
                 break;
-              case 37:
+              case 39:
                 uni.showToast({
                   title: res.msg,
                   icon: 'none'
                 });
-              case 38:
-                _context.next = 41;
-                break;
               case 40:
+                _context2.next = 43;
+                break;
+              case 42:
                 uni.showToast({
                   title: info.msg,
                   icon: 'none'
                 });
-              case 41:
-                _context.next = 44;
-                break;
               case 43:
+                _context2.next = 46;
+                break;
+              case 45:
                 if (code === 2002) {
                   _this2.inputs[0].error = true;
                   uni.showToast({
@@ -457,15 +525,15 @@ var _default = {
                     icon: 'none'
                   });
                 }
-              case 44:
+              case 46:
                 // 关闭加载动画
                 _this2.loading = false;
-              case 45:
+              case 47:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee);
+        }, _callee2);
       }))();
     }
   }

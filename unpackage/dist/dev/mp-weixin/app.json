@@ -12,7 +12,8 @@
     "pages/usual-grade/main",
     "pages/calendar/main",
     "pages/more/main",
-    "pages/about/main"
+    "pages/about/main",
+    "pages/wxlogin/main"
   ],
   "subPackages": [],
   "window": {

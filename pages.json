@@ -99,6 +99,13 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTextStyle": "black"
       }
+    },
+    {
+      "path": "pages/wxlogin/main",
+      "style": {
+        "navigationBarTitleText": "一键登录",
+        "enablePullDownRefresh": false
+      }
     }
   ],
   "globalStyle": {

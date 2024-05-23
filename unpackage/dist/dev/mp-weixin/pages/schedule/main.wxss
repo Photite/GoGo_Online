@@ -133,6 +133,15 @@
   color: white;
   text-align: center;
 }
+.to-login__btn01 {
+  width: 20%;
+  height: 70rpx;
+  margin: 0 auto;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+  text-align: center;
+}
 .blur {
   -webkit-filter: blur(3rpx);
           filter: blur(3rpx);
@@ -173,5 +182,8 @@
 }
 .modal-icon {
   width: 55rpx;
+}
+.picker01 {
+  width: 20%;
 }
 

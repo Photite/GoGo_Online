@@ -81,7 +81,7 @@
                   class="course-content flex flex-column align-center justify-center"
                   :style="currentDay === key + 1 ? 'background: #5d97f7' : ''"
                   v-if="it.course.length > 0"
-                  @click="showDetail(it.course[0])"
+                  @click="showDetail(it.course[0], i ,key)"
               >
                 <span class="mb-1">{{ it.course[0].name }}</span>
                 <br/>
@@ -111,7 +111,6 @@
         </div>
       </div>
     </div>
-
     <div
         class="modal"
         :class="display ? 'modal-display' : 'modal-hidden'"
@@ -124,12 +123,12 @@
           <i
               class="iconfont icon-clear mr-2 p-2"
               style="flex: 0;margin-left: auto;font-weight: bold;"
-              @click="display = false"
+              @click="display = false;this.reminderTime = '';this.content = '';this.homeworkcontent= '';"
           ></i>
         </div>
       </div>
 
-      <div class="modal-content" @click.stop>
+      <div class="modal-content">
         <div class="flex align-center mb-2">
           <image
               class="modal-icon mr-1"
@@ -182,6 +181,42 @@
             </span>
           </div>
         </div>
+
+        <div class="flex align-center mb-2">
+          <image
+              class="modal-icon mr-1"
+              src="/static/images/name.svg"
+              mode="widthFix"
+          />
+          <span>设置备忘</span>
+          <span class="gray ml-2"><input v-model="content" placeholder="输入提醒内容"></span>
+          <!-- 生成一个蓝色圆角的按钮 -->
+          <button class="to-login__btn01 bg-primary" @click="sendMessage(content,detail.name,detail.room)">设置</button>
+        </div>
+
+        <div class="flex align-center mb-2">
+          <image
+              class="modal-icon mr-1"
+              src="/static/images/reminder.png"
+              mode="widthFix"
+          />
+          <span>作业提醒</span>
+          <span class="gray ml-2" style="width: 25%"><input v-model="homeworkcontent" placeholder="输入提醒内容"></span>
+          <picker mode="selector" :range="days01" v-model="daysUntilReminder" @change="updateDaysUntilReminder"
+                  class="gray picker01 ml-2">
+            <!--            <i-->
+            <!--                class="iconfont"-->
+            <!--                data-label="选择周数"-->
+            <!--            ></i>-->
+            <input type="text" :value="days01[daysUntilReminder]" placeholder="选择周数" style="width: 100%"/>
+          </picker>
+
+          <!-- 生成一个蓝色圆角的按钮 -->
+          <button class="to-login__btn01 bg-primary"
+                  @click="sendHomeworkReminder(homeworkcontent,detail.name,detail.room)">设置
+          </button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -189,6 +224,7 @@
 
 <script>
 import index from "vuex";
+import {getTermStart, sendSubscribeMessage} from "@/request/api";
 
 export default {
   data() {
@@ -217,7 +253,12 @@ export default {
       }, // 课程详细信息
       days: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
       weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
-      active: false
+      active: false,
+      content: '',
+      homeworkcontent: '',
+      reminderTime: '',
+      daysUntilReminder: '',
+      days01: ['1天后', '2天后', '3天后', '4天后', '5天后', '6天后', '7天后'],
     }
   },
 
@@ -246,6 +287,9 @@ export default {
   },
 
   methods: {
+    updateDaysUntilReminder(event) {
+      this.daysUntilReminder = event.mp.detail.value;
+    },
     getCurrentSchedule(week) {
       console.log("传入的周数" + week)
       if (week <= 18) {
@@ -254,7 +298,7 @@ export default {
           return el.map(item => {
             if (item.course.length > 0) {
               const course = item.course.filter(it => {
-                return it.weeks.some(w => w.includes(week))
+                return it.weeks.includes(week) // 修改这一行
               })
               return {course}
             }
@@ -265,12 +309,121 @@ export default {
       console.log(uni.getStorageSync('schedule'))
       return uni.getStorageSync('schedule')
     },
+    toLocalISOString(date) {
+      const tzo = -date.getTimezoneOffset(),
+          dif = tzo >= 0 ? '+' : '-',
+          pad = function (num) {
+            const norm = Math.floor(Math.abs(num));
+            return (norm < 10 ? '0' : '') + norm;
+          };
+      return date.getFullYear() +
+          '-' + pad(date.getMonth() + 1) +
+          '-' + pad(date.getDate()) +
+          'T' + pad(date.getHours()) +
+          ':' + pad(date.getMinutes()) +
+          ':' + pad(date.getSeconds()) +
+          dif + pad(tzo / 60) +
+          ':' + pad(tzo % 60);
+    },
+    async sendMessage(content, name, room) {
+      console.log(content)
+      const content01 = this.createJson(name, room, content, this.reminderTime)
+      const content01String = JSON.stringify(content01);
+      let date = new Date(this.reminderTime);
+      let localIsoDate = this.toLocalISOString(date);
+      let localDateTime = localIsoDate.split('+')[0];
+
+      const {code, msg} = await sendSubscribeMessage({
+        openId: uni.getStorageSync('user').eduUsername,
+        templateId: '5l_6BpkJ0bGLx2JxnK_Nff3t2CweO9SopJKXBE3qfJg',
+        content: content01String,
+        reminderTime: localDateTime,
+      })
+      if (code === '1000') {
+        uni.showToast({
+          title: '发送成功',
+          icon: 'success'
+        })
+      } else {
+        uni.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    },
+    async sendHomeworkReminder(homeworkcontent, name, room) {
+      // 获取当前的日期和时间
+      let date = new Date(this.reminderTime);
+
+      // 根据用户的选择设置日期
+      date.setDate(date.getDate() + parseInt(this.daysUntilReminder) + 1);
+
+      // 设置时间为早上8点
+      date.setHours(8);
+      date.setMinutes(0);
+      date.setSeconds(0);
+
+      // 将日期和时间转换为ISO格式的字符串
+      let localIsoDate = this.toLocalISOString(date);
+      let localDateTime = localIsoDate.split('+')[0];
+
+      // 创建提醒内容
+      const content01 = this.createhomeworkJson(name, room, homeworkcontent, localDateTime)
+      const content01String = JSON.stringify(content01);
+
+      // 发送提醒
+      const {code, msg} = await sendSubscribeMessage({
+        openId: uni.getStorageSync('user').eduUsername,
+        templateId: 'vOJxRJYk2eSsX2L4DcVqunPtPBHVakraf9x1tXO2Zpo',
+        content: content01String,
+        reminderTime: localDateTime,
+      })
+      if (code === '1000') {
+        uni.showToast({
+          title: '发送成功',
+          icon: 'success'
+        })
+      } else {
+        uni.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    },
     setNavigationBarTitle(week) {
       uni.setNavigationBarTitle({
         title: `第 ${week} 周课表`
       })
     },
-
+    createhomeworkJson(name, room, content, reminderTime) {
+      return {
+        "thing1": {
+          "value": content
+        },
+        "thing2": {
+          "value": name + room
+        },
+        "time3": {
+          "value": reminderTime
+        }
+      }
+    },
+    createJson(name, room, content, reminderTime) {
+      return {
+        "thing1": {
+          "value": name + room
+        },
+        "thing2": {
+          "value": content
+        },
+        "time3": {
+          "value": reminderTime
+        },
+        "phrase4": {
+          "value": "重要"
+        }
+      }
+    },
     weekChange(e) {
       this.currentWeek = +e.mp.detail.value + 1
       this.setNavigationBarTitle(this.currentWeek)
@@ -286,11 +439,47 @@ export default {
       this.currentWeek = 19
       uni.setNavigationBarTitle({title: '全学期课表'})
     },
+    async getReminderTime(i, key) {
+      const period = this.periods[i] // 获取课程的时间段
+      const startTime = period.split(' - ')[0] // "10:55"
+      const user = uni.getStorageSync('user')
+      const start = await getTermStart(user)
+      let date;
+      if (start.code === "1000") {
+        console.log(start.data.start)
+        const termStartDate = new Date(start.data.start); // 学期开始日期
+        const state = this.$store.state;
+        const currentWeek = state.currentWeek;
+        const currentDay = state.currentDay - 1; // 将 currentDay 减 1
+        const dateOffset = (currentWeek - 1) * 7 + key; // 日期偏移量
+        termStartDate.setDate(termStartDate.getDate() + dateOffset); // 计算具体日期
+        date = termStartDate;
+      } else {
+        // 创建一个新的 Date 对象
+        return null;
+      }
 
-    showDetail(v) {
+      // 设置时间
+      date.setHours(parseInt(startTime.split(':')[0]));
+      date.setMinutes(parseInt(startTime.split(':')[1]));
+      // console.log(date)
+      // return date;
+      // 格式化日期
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      const seconds = String(date.getSeconds()).padStart(2, '0');
+      console.log("按钮课程时间" + `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`)
+      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    },
+    async showDetail(v, i, key) {
       this.display = true
       this.detail = v
-    }
+      this.reminderTime = await this.getReminderTime(i, key)
+      console.log("这是详情获取到的时间" + this.reminderTime)
+    },
   },
 
   onShareAppMessage() {
@@ -456,6 +645,16 @@ export default {
   text-align: center;
 }
 
+.to-login__btn01 {
+  width: 20%;
+  height: 70rpx;
+  margin: 0 auto;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+  text-align: center;
+}
+
 .blur {
   filter: blur(3rpx);
 }
@@ -500,5 +699,9 @@ export default {
 
 .modal-icon {
   width: 55rpx;
+}
+
+.picker01 {
+  width: 20%;
 }
 </style>

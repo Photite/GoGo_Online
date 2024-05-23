@@ -9903,140 +9903,9 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 34 */
-/*!******************************************!*\
-  !*** D:/Code/Uniapp/GoGo/request/api.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getAllGrades = getAllGrades;
-exports.getCurrentGrades = getCurrentGrades;
-exports.getExamTime = getExamTime;
-exports.getSchedule = getSchedule;
-exports.getStudentInfo = getStudentInfo;
-exports.getTermStart = getTermStart;
-exports.login = login;
-exports.stuLogin = stuLogin;
-exports.stuLogout = stuLogout;
-var _request = _interopRequireDefault(__webpack_require__(/*! ./request */ 35));
-var post = _request.default.post;
-var get = _request.default.get;
-
-// 登录
-function login(data) {
-  return post("/login", data);
-}
-
-// 学生信息
-function getStudentInfo(data) {
-  return get("/edu/getUserProfile", data);
-}
-
-// 课表信息
-function getSchedule(data) {
-  return get("/edu/getTimetable", data);
-}
-
-// 当前学期的成绩
-function getCurrentGrades(data) {
-  return get("/edu/getExamGrade", data);
-}
-
-// 全部学期的成绩
-function getAllGrades(data) {
-  return get("/edu/getAllExamGrade", data);
-}
-
-// 模拟教务系统的登录
-function stuLogin(data) {
-  console.log(data);
-  return post("/edu/stuLogin", data);
-}
-
-// 模拟教务系统的退出
-function stuLogout(data) {
-  return post("/user/stuLogout", data);
-}
-
-// 获取学期开始的时间
-function getTermStart(data) {
-  return get("/edu/getSchoolCalender", data);
-}
-
-// 考试时间
-function getExamTime(data) {
-  return post("/user/getExamDetail", data);
-}
-
-/***/ }),
-/* 35 */
-/*!**********************************************!*\
-  !*** D:/Code/Uniapp/GoGo/request/request.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var host = 'http://localhost:8080'; // 测试环境
-// const host = 'https://hrspider.top/api' // 线上环境
-
-var request = {
-  get: function get(url, data) {
-    return new Promise(function (resolve, reject) {
-      uni.request({
-        data: data,
-        url: "".concat(host).concat(url),
-        method: 'GET',
-        success: function success(res) {
-          resolve(res.data);
-        },
-        fail: function fail(error) {
-          reject(error);
-        }
-      });
-    });
-  },
-  post: function post(url, data) {
-    return new Promise(function (resolve, reject) {
-      uni.request({
-        data: data,
-        method: 'POST',
-        url: "".concat(host).concat(url),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        success: function success(res) {
-          resolve(res.data);
-        },
-        fail: function fail(error) {
-          reject(error);
-        }
-      });
-    });
-  }
-};
-var _default = request;
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-/* 36 */,
-/* 37 */,
-/* 38 */
+/* 34 */,
+/* 35 */,
+/* 36 */
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
   \**********************************************************************************************************/
@@ -10167,7 +10036,7 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 39 */
+/* 37 */
 /*!************************************!*\
   !*** D:/Code/Uniapp/GoGo/store.js ***!
   \************************************/
@@ -10183,7 +10052,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 40));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 38));
 _vue.default.use(_vuex.default);
 var store = new _vuex.default.Store({
   state: {
@@ -10217,7 +10086,7 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 40 */
+/* 38 */
 /*!**************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vuex3/dist/vuex.common.js ***!
   \**************************************************************************************/
@@ -11473,7 +11342,7 @@ module.exports = index_cjs;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 41 */
+/* 39 */
 /*!********************************************************!*\
   !*** D:/Code/Uniapp/GoGo/styles/iconfont/iconfont.css ***!
   \********************************************************/
@@ -11485,7 +11354,7 @@ module.exports = index_cjs;
   
 
 /***/ }),
-/* 42 */
+/* 40 */
 /*!**********************************************!*\
   !*** D:/Code/Uniapp/GoGo/styles/common.scss ***!
   \**********************************************/
@@ -11497,7 +11366,7 @@ module.exports = index_cjs;
   
 
 /***/ }),
-/* 43 */
+/* 41 */
 /*!*********************************************!*\
   !*** D:/Code/Uniapp/GoGo/styles/style.scss ***!
   \*********************************************/
@@ -11507,6 +11376,157 @@ module.exports = index_cjs;
 // extracted by mini-css-extract-plugin
     if(false) { var cssReload; }
   
+
+/***/ }),
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
+/*!******************************************!*\
+  !*** D:/Code/Uniapp/GoGo/request/api.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getAllGrades = getAllGrades;
+exports.getCurrentGrades = getCurrentGrades;
+exports.getExamTime = getExamTime;
+exports.getSchedule = getSchedule;
+exports.getStudentInfo = getStudentInfo;
+exports.getTermStart = getTermStart;
+exports.login = login;
+exports.sendSubscribeMessage = sendSubscribeMessage;
+exports.stuLogin = stuLogin;
+exports.stuLogout = stuLogout;
+var _request = _interopRequireDefault(__webpack_require__(/*! ./request */ 57));
+var post = _request.default.post;
+var get = _request.default.get;
+
+// 登录
+function login(data) {
+  return post("/user/login", data);
+}
+
+// 发送订阅消息请求
+function sendSubscribeMessage(data) {
+  return post("/reminders/createReminder", data);
+}
+
+// 学生信息
+function getStudentInfo(data) {
+  return get("/edu/getUserProfile", data);
+}
+
+// 课表信息
+function getSchedule(data) {
+  return get("/edu/getTimetable", data);
+}
+
+// 当前学期的成绩
+function getCurrentGrades(data) {
+  return get("/edu/getExamGrade", data);
+}
+
+// 全部学期的成绩
+function getAllGrades(data) {
+  return get("/edu/getAllExamGrade", data);
+}
+
+// 模拟教务系统的登录
+function stuLogin(data) {
+  console.log(data);
+  return post("/edu/stuLogin", data);
+}
+
+// 模拟教务系统的退出
+function stuLogout(data) {
+  return post("/user/stuLogout", data);
+}
+
+// 获取学期开始的时间
+function getTermStart(data) {
+  return get("/edu/getSchoolCalender", data);
+}
+
+// 考试时间
+function getExamTime(data) {
+  return post("/user/getExamDetail", data);
+}
+
+/***/ }),
+/* 57 */
+/*!**********************************************!*\
+  !*** D:/Code/Uniapp/GoGo/request/request.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var host = 'http://localhost:8080'; // 测试环境
+// const host = 'https://hrspider.top/api' // 线上环境
+
+var request = {
+  get: function get(url, data) {
+    return new Promise(function (resolve, reject) {
+      uni.request({
+        data: data,
+        url: "".concat(host).concat(url),
+        method: 'GET',
+        success: function success(res) {
+          resolve(res.data);
+        },
+        fail: function fail(error) {
+          reject(error);
+        }
+      });
+    });
+  },
+  post: function post(url, data) {
+    return new Promise(function (resolve, reject) {
+      uni.request({
+        data: data,
+        method: 'POST',
+        url: "".concat(host).concat(url),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        success: function success(res) {
+          resolve(res.data);
+        },
+        fail: function fail(error) {
+          reject(error);
+        }
+      });
+    });
+  }
+};
+var _default = request;
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 ]]);

@@ -97,9 +97,9 @@ const sections = [{
     url: '../usual-grade/main'
   },
   {
-    label: '待开发',
+    label: '微信登录',
     icon: '/static/icons/icon-tag.png',
-    url: '..//pages/wx-login/main'
+    url: '../wxlogin/main'
   },
   {
     label: '待开发',

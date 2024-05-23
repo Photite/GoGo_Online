@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import {getStudentInfo, getSchedule, stuLogin, stuLogout, getTermStart} from '@/request/api'
+import {getSchedule, getStudentInfo, getTermStart, login, stuLogin} from '@/request/api'
 
 import LoaderLine from '@/components/LoaderLine'
 import {getTodayInfo} from "@/utils";
@@ -195,29 +195,76 @@ export default {
       }
       const {code, msg} = await stuLogin(loginData)
       if (code === "1000") {
+        uni.login({
+          "provider": "weixin",
+          "onlyAuthorize": true, // 微信登录仅请求授权认证
+          async success(res) {
+            console.log(res.code);
+            const loginTmp  = {
+              "code": res.code,
+              "openId": "",
+              "eduUsername": loginData.eduUsername,
+              "eduPassword": loginData.eduPassword
+            };
+            const logininfo = await login(loginTmp)
+            if (logininfo.code === "1000") {
+              console.log("登录成功")
+            } else {
+              uni.showToast({title: logininfo.msg, icon: 'none'})
+            }
+          }
+        })
         const info = await getStudentInfo(loginData)
         if (info.code === "1000") {
           console.log("获取学生信息成功")
+          // const res = await getSchedule(loginData)
+          // if (res.code === "1000") {
+          //   console.log("获取课程表成功")
+          //   // 创建一个空的二维数组，其中每个元素代表一天的课程表
+          //   let schedule = Array(10).fill().map(() => Array(7).fill().map(() => ({course: []})));
+          //
+          //   res.data.forEach(course => {
+          //     let dayInWeek = course.dayInWeek - 1; // 确保 dayInWeek 的值是从0（代表星期一）到6（代表星期日）
+          //     let startLesson = course.lesson.start - 1;
+          //     let endLesson = course.lesson.end - 1;
+          //
+          //     if (dayInWeek >= 0 && dayInWeek < 7 && startLesson >= 0 && endLesson < 10) { // 修改这里的条件，使其可以处理星期一到星期日的数据
+          //       for (let i = startLesson; i <= endLesson; i++) {
+          //         schedule[i][dayInWeek].course.push({
+          //           name: course.name,
+          //           teacher: course.teacher,
+          //           room: course.room,
+          //           code: course.code,
+          //           weeks: course.weekAsMinMax.map(week => Array.from({length: week.end - week.start + 1}, (_, i) => i + week.start)),
+          //           weekEachLesson: course.weekEachLesson,
+          //         });
+          //       }
+          //     } else {
+          //       console.log(`课程 ${course.name} 的时间信息超出了课程表的范围`);
+          //     }
+          //   });
+          //   console.log(schedule)
+          //   console.log(info.data)
           const res = await getSchedule(loginData)
           if (res.code === "1000") {
             console.log("获取课程表成功")
-            // 创建一个空的二维数组，其中每个元素代表一天的课程表
             let schedule = Array(10).fill().map(() => Array(7).fill().map(() => ({course: []})));
 
             res.data.forEach(course => {
-              let dayInWeek = course.dayInWeek - 1; // 确保 dayInWeek 的值是从0（代表星期一）到6（代表星期日）
-              let startLesson = course.lesson.start - 1;
-              let endLesson = course.lesson.end - 1;
+              let dayInWeek = course.dayInWeek - 1;
+              let startLesson = course.lessonStart - 1;
+              let endLesson = course.lessonEnd - 1;
 
-              if (dayInWeek >= 0 && dayInWeek < 7 && startLesson >= 0 && endLesson < 10) { // 修改这里的条件，使其可以处理星期一到星期日的数据
+              if (dayInWeek >= 0 && dayInWeek < 7 && startLesson >= 0 && endLesson < 10) {
                 for (let i = startLesson; i <= endLesson; i++) {
                   schedule[i][dayInWeek].course.push({
                     name: course.name,
                     teacher: course.teacher,
                     room: course.room,
                     code: course.code,
-                    weeks: course.weekAsMinMax.map(week => Array.from({length: week.end - week.start + 1}, (_, i) => i + week.start)),
+                    weeks: Array.from({length: course.weekEnd - course.weekStart + 1}, (_, i) => i + course.weekStart),
                     weekEachLesson: course.weekEachLesson,
+                    weekType: course.weekType,
                   });
                 }
               } else {
@@ -243,6 +290,7 @@ export default {
             }
             const time = uni.getStorageSync('termStartDate')
             console.log("这是登录时获取的学期开始日期" + time)
+            uni.showToast({title: '登录成功', icon: 'success'})
             console.log("跳转前的准备")
             uni.navigateBack()
           } else {
@@ -251,7 +299,6 @@ export default {
         } else {
           uni.showToast({title: info.msg, icon: 'none'})
         }
-
 
       } else if (code === 2002) {
         this.inputs[0].error = true

@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/schedule/main"],{
 
-/***/ 52:
+/***/ 50:
 /*!**********************************************************************!*\
   !*** D:/Code/Uniapp/GoGo/main.js?{"page":"pages%2Fschedule%2Fmain"} ***!
   \**********************************************************************/
@@ -13,7 +13,7 @@
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 __webpack_require__(/*! uni-pages */ 26);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
-var _main = _interopRequireDefault(__webpack_require__(/*! ./pages/schedule/main.vue */ 53));
+var _main = _interopRequireDefault(__webpack_require__(/*! ./pages/schedule/main.vue */ 51));
 // @ts-ignore
 wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
 createPage(_main.default);
@@ -21,7 +21,7 @@ createPage(_main.default);
 
 /***/ }),
 
-/***/ 53:
+/***/ 51:
 /*!***************************************************!*\
   !*** D:/Code/Uniapp/GoGo/pages/schedule/main.vue ***!
   \***************************************************/
@@ -30,11 +30,11 @@ createPage(_main.default);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _main_vue_vue_type_template_id_16efe608___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.vue?vue&type=template&id=16efe608& */ 54);
-/* harmony import */ var _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.vue?vue&type=script&lang=js& */ 56);
+/* harmony import */ var _main_vue_vue_type_template_id_16efe608___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.vue?vue&type=template&id=16efe608& */ 52);
+/* harmony import */ var _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.vue?vue&type=script&lang=js& */ 54);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _main_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main.vue?vue&type=style&index=0&lang=css& */ 58);
-/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 38);
+/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 36);
 
 var renderjs
 
@@ -62,7 +62,7 @@ component.options.__file = "pages/schedule/main.vue"
 
 /***/ }),
 
-/***/ 54:
+/***/ 52:
 /*!**********************************************************************************!*\
   !*** D:/Code/Uniapp/GoGo/pages/schedule/main.vue?vue&type=template&id=16efe608& ***!
   \**********************************************************************************/
@@ -71,7 +71,7 @@ component.options.__file = "pages/schedule/main.vue"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_template_id_16efe608___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./main.vue?vue&type=template&id=16efe608& */ 55);
+/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_template_id_16efe608___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./main.vue?vue&type=template&id=16efe608& */ 53);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_template_id_16efe608___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_template_id_16efe608___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 55:
+/***/ 53:
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/Code/Uniapp/GoGo/pages/schedule/main.vue?vue&type=template&id=16efe608& ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -126,6 +126,9 @@ var render = function () {
     }
     _vm.e1 = function ($event) {
       _vm.display = false
+      this.reminderTime = ""
+      this.content = ""
+      this.homeworkcontent = ""
     }
   }
   _vm.$mp.data = Object.assign(
@@ -145,7 +148,7 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ 56:
+/***/ 54:
 /*!****************************************************************************!*\
   !*** D:/Code/Uniapp/GoGo/pages/schedule/main.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
@@ -154,14 +157,14 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./main.vue?vue&type=script&lang=js& */ 57);
+/* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./main.vue?vue&type=script&lang=js& */ 55);
 /* harmony import */ var _Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_Software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 57:
+/***/ 55:
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/Code/Uniapp/GoGo/pages/schedule/main.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -176,7 +179,45 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 40));
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
+var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 38));
+var _api = __webpack_require__(/*! @/request/api */ 56);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -384,7 +425,12 @@ var _default = {
       // 课程详细信息
       days: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
       weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
-      active: false
+      active: false,
+      content: '',
+      homeworkcontent: '',
+      reminderTime: '',
+      daysUntilReminder: '',
+      days01: ['1天后', '2天后', '3天后', '4天后', '5天后', '6天后', '7天后']
     };
   },
   mounted: function mounted() {
@@ -409,6 +455,9 @@ var _default = {
     }
   },
   methods: {
+    updateDaysUntilReminder: function updateDaysUntilReminder(event) {
+      this.daysUntilReminder = event.mp.detail.value;
+    },
     getCurrentSchedule: function getCurrentSchedule(week) {
       console.log("传入的周数" + week);
       if (week <= 18) {
@@ -417,10 +466,9 @@ var _default = {
           return el.map(function (item) {
             if (item.course.length > 0) {
               var course = item.course.filter(function (it) {
-                return it.weeks.some(function (w) {
-                  return w.includes(week);
-                });
+                return it.weeks.includes(week); // 修改这一行
               });
+
               return {
                 course: course
               };
@@ -432,10 +480,144 @@ var _default = {
       console.log(uni.getStorageSync('schedule'));
       return uni.getStorageSync('schedule');
     },
+    toLocalISOString: function toLocalISOString(date) {
+      var tzo = -date.getTimezoneOffset(),
+        dif = tzo >= 0 ? '+' : '-',
+        pad = function pad(num) {
+          var norm = Math.floor(Math.abs(num));
+          return (norm < 10 ? '0' : '') + norm;
+        };
+      return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate()) + 'T' + pad(date.getHours()) + ':' + pad(date.getMinutes()) + ':' + pad(date.getSeconds()) + dif + pad(tzo / 60) + ':' + pad(tzo % 60);
+    },
+    sendMessage: function sendMessage(content, name, room) {
+      var _this = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+        var content01, content01String, date, localIsoDate, localDateTime, _yield$sendSubscribeM, code, msg;
+        return _regenerator.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                console.log(content);
+                content01 = _this.createJson(name, room, content, _this.reminderTime);
+                content01String = JSON.stringify(content01);
+                date = new Date(_this.reminderTime);
+                localIsoDate = _this.toLocalISOString(date);
+                localDateTime = localIsoDate.split('+')[0];
+                _context.next = 8;
+                return (0, _api.sendSubscribeMessage)({
+                  openId: uni.getStorageSync('user').eduUsername,
+                  templateId: '5l_6BpkJ0bGLx2JxnK_Nff3t2CweO9SopJKXBE3qfJg',
+                  content: content01String,
+                  reminderTime: localDateTime
+                });
+              case 8:
+                _yield$sendSubscribeM = _context.sent;
+                code = _yield$sendSubscribeM.code;
+                msg = _yield$sendSubscribeM.msg;
+                if (code === '1000') {
+                  uni.showToast({
+                    title: '发送成功',
+                    icon: 'success'
+                  });
+                } else {
+                  uni.showToast({
+                    title: msg,
+                    icon: 'none'
+                  });
+                }
+              case 12:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    sendHomeworkReminder: function sendHomeworkReminder(homeworkcontent, name, room) {
+      var _this2 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+        var date, localIsoDate, localDateTime, content01, content01String, _yield$sendSubscribeM2, code, msg;
+        return _regenerator.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                // 获取当前的日期和时间
+                date = new Date(_this2.reminderTime); // 根据用户的选择设置日期
+                date.setDate(date.getDate() + parseInt(_this2.daysUntilReminder) + 1);
+
+                // 设置时间为早上8点
+                date.setHours(8);
+                date.setMinutes(0);
+                date.setSeconds(0);
+
+                // 将日期和时间转换为ISO格式的字符串
+                localIsoDate = _this2.toLocalISOString(date);
+                localDateTime = localIsoDate.split('+')[0]; // 创建提醒内容
+                content01 = _this2.createhomeworkJson(name, room, homeworkcontent, localDateTime);
+                content01String = JSON.stringify(content01); // 发送提醒
+                _context2.next = 11;
+                return (0, _api.sendSubscribeMessage)({
+                  openId: uni.getStorageSync('user').eduUsername,
+                  templateId: 'vOJxRJYk2eSsX2L4DcVqunPtPBHVakraf9x1tXO2Zpo',
+                  content: content01String,
+                  reminderTime: localDateTime
+                });
+              case 11:
+                _yield$sendSubscribeM2 = _context2.sent;
+                code = _yield$sendSubscribeM2.code;
+                msg = _yield$sendSubscribeM2.msg;
+                if (code === '1000') {
+                  uni.showToast({
+                    title: '发送成功',
+                    icon: 'success'
+                  });
+                } else {
+                  uni.showToast({
+                    title: msg,
+                    icon: 'none'
+                  });
+                }
+              case 15:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
     setNavigationBarTitle: function setNavigationBarTitle(week) {
       uni.setNavigationBarTitle({
         title: "\u7B2C ".concat(week, " \u5468\u8BFE\u8868")
       });
+    },
+    createhomeworkJson: function createhomeworkJson(name, room, content, reminderTime) {
+      return {
+        "thing1": {
+          "value": content
+        },
+        "thing2": {
+          "value": name + room
+        },
+        "time3": {
+          "value": reminderTime
+        }
+      };
+    },
+    createJson: function createJson(name, room, content, reminderTime) {
+      return {
+        "thing1": {
+          "value": name + room
+        },
+        "thing2": {
+          "value": content
+        },
+        "time3": {
+          "value": reminderTime
+        },
+        "phrase4": {
+          "value": "重要"
+        }
+      };
     },
     weekChange: function weekChange(e) {
       this.currentWeek = +e.mp.detail.value + 1;
@@ -452,9 +634,81 @@ var _default = {
         title: '全学期课表'
       });
     },
-    showDetail: function showDetail(v) {
-      this.display = true;
-      this.detail = v;
+    getReminderTime: function getReminderTime(i, key) {
+      var _this3 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
+        var period, startTime, user, start, date, termStartDate, state, currentWeek, currentDay, dateOffset, year, month, day, hours, minutes, seconds;
+        return _regenerator.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                period = _this3.periods[i]; // 获取课程的时间段
+                startTime = period.split(' - ')[0]; // "10:55"
+                user = uni.getStorageSync('user');
+                _context3.next = 5;
+                return (0, _api.getTermStart)(user);
+              case 5:
+                start = _context3.sent;
+                if (!(start.code === "1000")) {
+                  _context3.next = 17;
+                  break;
+                }
+                console.log(start.data.start);
+                termStartDate = new Date(start.data.start); // 学期开始日期
+                state = _this3.$store.state;
+                currentWeek = state.currentWeek;
+                currentDay = state.currentDay - 1; // 将 currentDay 减 1
+                dateOffset = (currentWeek - 1) * 7 + key; // 日期偏移量
+                termStartDate.setDate(termStartDate.getDate() + dateOffset); // 计算具体日期
+                date = termStartDate;
+                _context3.next = 18;
+                break;
+              case 17:
+                return _context3.abrupt("return", null);
+              case 18:
+                // 设置时间
+                date.setHours(parseInt(startTime.split(':')[0]));
+                date.setMinutes(parseInt(startTime.split(':')[1]));
+                // console.log(date)
+                // return date;
+                // 格式化日期
+                year = date.getFullYear();
+                month = String(date.getMonth() + 1).padStart(2, '0');
+                day = String(date.getDate()).padStart(2, '0');
+                hours = String(date.getHours()).padStart(2, '0');
+                minutes = String(date.getMinutes()).padStart(2, '0');
+                seconds = String(date.getSeconds()).padStart(2, '0');
+                console.log("按钮课程时间" + "".concat(year, "-").concat(month, "-").concat(day, " ").concat(hours, ":").concat(minutes, ":").concat(seconds));
+                return _context3.abrupt("return", "".concat(year, "-").concat(month, "-").concat(day, " ").concat(hours, ":").concat(minutes, ":").concat(seconds));
+              case 28:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    showDetail: function showDetail(v, i, key) {
+      var _this4 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4() {
+        return _regenerator.default.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this4.display = true;
+                _this4.detail = v;
+                _context4.next = 4;
+                return _this4.getReminderTime(i, key);
+              case 4:
+                _this4.reminderTime = _context4.sent;
+                console.log("这是详情获取到的时间" + _this4.reminderTime);
+              case 6:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
     }
   },
   onShareAppMessage: function onShareAppMessage() {
@@ -498,5 +752,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[52,"common/runtime","common/vendor"]]]);
+},[[50,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/schedule/main.js.map
