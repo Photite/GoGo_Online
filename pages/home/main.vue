@@ -99,12 +99,13 @@ const sections = [{
   {
     label: '微信登录',
     icon: '/static/icons/icon-tag.png',
-    url: '../wxlogin/main'
+    url: '../new/main'
+    // url: '../wxlogin/main'
   },
   {
     label: '待开发',
     icon: '/static/icons/icon-flash.png',
-    url: ''
+    url: '../social/main'
   }
 ]
 const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
@@ -191,7 +192,7 @@ export default {
         }
       } else {
         uni.showModal({
-          content: '您还没有绑定 Myscse 账号哦',
+          content: '您还没有绑定 Myhbwe 账号哦',
           confirmText: '去绑定',
           confirmColor: '#5d97f7',
           success({

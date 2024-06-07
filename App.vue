@@ -19,7 +19,6 @@ export default {
       console.log('已登录' + this.$store.state.logged)
       console.log('设置学期开始日期')
       commit('setTodayInfo', time)
-
     } else {
       console.log('未登录' + this.$store.state.logged)
       // 获取当前日期，并设置为2024/3/27格式
@@ -37,6 +36,12 @@ export default {
 .main {
   font-size: 30rpx;
   background: #f9f7fa;
+}
+
+/* 引入 iconfont */
+@font-face {
+  font-family: 'iconfont';
+  src: url('https://at.alicdn.com/t/font_8d5l8fzk5b87iudi.ttf') format('truetype');
 }
 </style>
 

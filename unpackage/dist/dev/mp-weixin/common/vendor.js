@@ -780,8 +780,8 @@ function populateParameters(result) {
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "4.06",
-    uniRuntimeVersion: "4.06",
+    uniCompileVersion: "4.15",
+    uniRuntimeVersion: "4.15",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -2649,7 +2649,7 @@ var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ 14);
 function toPropertyKey(t) {
   var i = toPrimitive(t, "string");
-  return "symbol" == _typeof(i) ? i : String(i);
+  return "symbol" == _typeof(i) ? i : i + "";
 }
 module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -9467,7 +9467,7 @@ internalMixin(Vue);
 /***/ }),
 /* 26 */
 /*!**************************************!*\
-  !*** D:/Code/Uniapp/GoGo/pages.json ***!
+  !*** D:/Code/GoGo_Online/pages.json ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -9610,7 +9610,7 @@ function _regeneratorRuntime() {
   function makeInvokeMethod(e, r, n) {
     var o = h;
     return function (i, a) {
-      if (o === f) throw new Error("Generator is already running");
+      if (o === f) throw Error("Generator is already running");
       if (o === s) {
         if ("throw" === i) throw a;
         return {
@@ -9758,7 +9758,7 @@ function _regeneratorRuntime() {
           } else if (c) {
             if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
           } else {
-            if (!u) throw new Error("try statement without catch or finally");
+            if (!u) throw Error("try statement without catch or finally");
             if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
           }
         }
@@ -9798,7 +9798,7 @@ function _regeneratorRuntime() {
           return o;
         }
       }
-      throw new Error("illegal catch attempt");
+      throw Error("illegal catch attempt");
     },
     delegateYield: function delegateYield(e, r, n) {
       return this.delegate = {
@@ -9854,7 +9854,7 @@ module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exp
 /***/ }),
 /* 33 */
 /*!******************************************!*\
-  !*** D:/Code/Uniapp/GoGo/utils/index.js ***!
+  !*** D:/Code/GoGo_Online/utils/index.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -10038,7 +10038,7 @@ function normalizeComponent (
 /***/ }),
 /* 37 */
 /*!************************************!*\
-  !*** D:/Code/Uniapp/GoGo/store.js ***!
+  !*** D:/Code/GoGo_Online/store.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11344,7 +11344,7 @@ module.exports = index_cjs;
 /***/ }),
 /* 39 */
 /*!********************************************************!*\
-  !*** D:/Code/Uniapp/GoGo/styles/iconfont/iconfont.css ***!
+  !*** D:/Code/GoGo_Online/styles/iconfont/iconfont.css ***!
   \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11356,7 +11356,7 @@ module.exports = index_cjs;
 /***/ }),
 /* 40 */
 /*!**********************************************!*\
-  !*** D:/Code/Uniapp/GoGo/styles/common.scss ***!
+  !*** D:/Code/GoGo_Online/styles/common.scss ***!
   \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11368,7 +11368,7 @@ module.exports = index_cjs;
 /***/ }),
 /* 41 */
 /*!*********************************************!*\
-  !*** D:/Code/Uniapp/GoGo/styles/style.scss ***!
+  !*** D:/Code/GoGo_Online/styles/style.scss ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11394,7 +11394,7 @@ module.exports = index_cjs;
 /* 55 */,
 /* 56 */
 /*!******************************************!*\
-  !*** D:/Code/Uniapp/GoGo/request/api.js ***!
+  !*** D:/Code/GoGo_Online/request/api.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11406,6 +11406,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/inte
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.addActivity = addActivity;
 exports.getAllGrades = getAllGrades;
 exports.getCurrentGrades = getCurrentGrades;
 exports.getExamTime = getExamTime;
@@ -11471,10 +11472,15 @@ function getExamTime(data) {
   return post("/user/getExamDetail", data);
 }
 
+// 添加活动
+function addActivity(data) {
+  return post("/activity/add", data);
+}
+
 /***/ }),
 /* 57 */
 /*!**********************************************!*\
-  !*** D:/Code/Uniapp/GoGo/request/request.js ***!
+  !*** D:/Code/GoGo_Online/request/request.js ***!
   \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {

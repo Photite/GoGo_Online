@@ -87,9 +87,17 @@
                 <br/>
                 <span>{{ it.course[0].room }}</span>
               </div>
-              <div v-else></div>
+              <!--              <div v-else>-->
+
+              <!--              </div>-->
+              <div class="add-activity flex align-center justify-center"
+                   v-else
+                   @click="showAddActivityForm" style="background-color:#fff;">
+                <image src="/static/icons/add.png" style="width: 10px;height: 10px"/>
+              </div>
             </div>
           </div>
+
         </template>
 
         <!-- 前往登录 -->
@@ -189,7 +197,7 @@
               mode="widthFix"
           />
           <span>设置备忘</span>
-          <span class="gray ml-2"><input v-model="content" placeholder="输入提醒内容"></span>
+          <span class="gray ml-2"><input v-model="content" placeholder="请输入提醒内容"></span>
           <!-- 生成一个蓝色圆角的按钮 -->
           <button class="to-login__btn01 bg-primary" @click="sendMessage(content,detail.name,detail.room)">设置</button>
         </div>
@@ -201,14 +209,10 @@
               mode="widthFix"
           />
           <span>作业提醒</span>
-          <span class="gray ml-2" style="width: 25%"><input v-model="homeworkcontent" placeholder="输入提醒内容"></span>
+          <span class="gray ml-2" style="width: 25%"><input v-model="homeworkcontent" placeholder="请输入提醒内容"></span>
           <picker mode="selector" :range="days01" v-model="daysUntilReminder" @change="updateDaysUntilReminder"
                   class="gray picker01 ml-2">
-            <!--            <i-->
-            <!--                class="iconfont"-->
-            <!--                data-label="选择周数"-->
-            <!--            ></i>-->
-            <input type="text" :value="days01[daysUntilReminder]" placeholder="选择周数" style="width: 100%"/>
+            <input type="text" :value="days01[daysUntilReminder]" placeholder="选择时间" style="width: 100%"/>
           </picker>
 
           <!-- 生成一个蓝色圆角的按钮 -->
@@ -219,12 +223,81 @@
 
       </div>
     </div>
+
+
+    <div
+        class="modal"
+        :class="displayAddActivityForm ? 'modal-display' : 'modal-hidden'"
+    >
+      <div class="modal-header">
+        <div
+            class="flex align-center"
+            style="overflow: hidden;"
+        >
+          <i
+              class="iconfont icon-clear mr-2 p-2"
+              style="flex: 0;margin-left: auto;font-weight: bold;"
+              @click="displayAddActivityForm = false;"
+          ></i>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <div class="flex align-center mb-2">
+          <image
+              class="modal-icon mr-1"
+              src="/static/images/name.svg"
+              mode="widthFix"
+          />
+          <span>活动名称</span>
+          <span class="gray ml-2"><input v-model="newActivity.name" placeholder="请输入活动名称"></span>
+        </div>
+
+        <!--        <div class="modal-grid">-->
+        <div class="flex align-center mb-2">
+          <image
+              class="modal-icon mr-1"
+              src="/static/images/teacher.svg"
+              mode="widthFix"
+          />
+          <span>活动地点</span>
+          <span class="gray ml-2"><input v-model="newActivity.location" placeholder="请输入活动地点"></span>
+        </div>
+        <!--        </div>-->
+
+        <!--        <div class="modal-grid">-->
+        <div class="flex align-center mb-2">
+          <image
+              class="modal-icon mr-1"
+              src="/static/images/teacher.svg"
+              mode="widthFix"
+          />
+          <span>活动时间</span>
+          <span class="gray ml-2"><input v-model="newActivity.time" placeholder="请输入活动时间"></span>
+        </div>
+        <!--        </div>-->
+
+        <div class="flex align-center mb-2">
+          <image
+              class="modal-icon mr-1"
+              src="/static/images/name.svg"
+              mode="widthFix"
+          />
+          <span>设置备忘</span>
+          <span class="gray ml-2"><input v-model="content" placeholder="请输入提醒内容"></span>
+          <!-- 生成一个蓝色圆角的按钮 -->
+          <button class="to-login__btn01 bg-primary" @click="sendMessage(content,detail.name,detail.room)">设置</button>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
 import index from "vuex";
-import {getTermStart, sendSubscribeMessage} from "@/request/api";
+import {addActivity, getTermStart, sendSubscribeMessage} from "@/request/api";
 
 export default {
   data() {
@@ -259,6 +332,12 @@ export default {
       reminderTime: '',
       daysUntilReminder: '',
       days01: ['1天后', '2天后', '3天后', '4天后', '5天后', '6天后', '7天后'],
+      displayAddActivityForm: false, // 是否显示添加活动的表单
+      newActivity: { // 新的活动
+        name: '',
+        location: '',
+        time: '',
+      },
     }
   },
 
@@ -479,6 +558,31 @@ export default {
       this.detail = v
       this.reminderTime = await this.getReminderTime(i, key)
       console.log("这是详情获取到的时间" + this.reminderTime)
+    }, // 其他方法...
+    showAddActivityForm() {
+      this.displayAddActivityForm = true;
+    },
+    async addActivity() {
+      // 添加新的活动...
+      const data = {
+        name: this.newActivity.name,
+        location: this.newActivity.location,
+        time: this.newActivity.time,
+      };
+
+      const response = await addActivity(data);
+
+      if (response.code === '1000') {
+        // 如果添加成功，清空表单并关闭添加活动的表单
+        this.newActivity = {name: '', location: '', time: ''};
+        this.displayAddActivityForm = false;
+      } else {
+        // 如果添加失败，显示错误信息
+        uni.showToast({
+          title: response.msg,
+          icon: 'none'
+        });
+      }
     },
   },
 

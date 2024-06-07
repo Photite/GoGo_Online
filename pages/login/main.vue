@@ -93,7 +93,7 @@ const inputs = [
     name: 'username',
     type: 'number',
     icon: 'icon-username',
-    placeholder: '请输入Myscse账号',
+    placeholder: '请输入Myhbwe账号',
     value: '',
     maxlength: 15,
     focus: false,

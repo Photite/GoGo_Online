@@ -1,0 +1,94 @@
+
+.container {
+  padding: 10px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.nav-item {
+  font-size: 18px;
+  color: #666;
+}
+.nav-item.active {
+  color: #ff9900;
+  font-weight: bold;
+}
+.search-bar {
+  padding: 10px 0;
+}
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+.content {
+  padding-top: 10px;
+}
+.post {
+  background: #fff;
+  border-radius:  10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.post-header {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user-info {
+  margin-left: 10px;
+}
+.user-name {
+  font-weight: bold;
+}
+.verified {
+  color: #ff9900;
+}
+.user-details {
+  color: #999;
+  font-size: 12px;
+}
+.post-content {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+.post-image {
+  width: 100%;
+  border-radius: 10px;
+}
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.icon-item {
+  display: flex;
+  align-items: center;
+}
+.icon-item text {
+  margin-left: 5px;
+}
+/* Icon 字体样式（需要引入 iconfont） */
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+}
+.icon-share:before {
+  content: "\e600"; /* 分享图标的 Unicode */
+}
+.icon-comment:before {
+  content: "\e601"; /* 评论图标的 Unicode */
+}
+.icon-like:before {
+  content: "\e602"; /* 点赞图标的 Unicode */
+}
+

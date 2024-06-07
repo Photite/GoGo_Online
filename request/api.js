@@ -53,3 +53,8 @@ export function getTermStart(data) {
 export function getExamTime(data) {
     return post(`/user/getExamDetail`, data)
 }
+
+// 添加活动
+export function addActivity(data) {
+    return post(`/activity/add`, data)
+}

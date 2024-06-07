@@ -1,0 +1,68 @@
+
+.container.data-v-5bc67a41 {
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+.header.data-v-5bc67a41 {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.activity-break.data-v-5bc67a41 {
+  height: 20rpx;
+}
+.back-icon.data-v-5bc67a41 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.title.data-v-5bc67a41 {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.activity-card.data-v-5bc67a41 {
+  margin-bottom: 40rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  padding-bottom: 20rpx;
+}
+.activity-image.data-v-5bc67a41 {
+  width: 100%;
+  border-radius: 10rpx;
+}
+.activity-content.data-v-5bc67a41 {
+  padding-top: 20rpx;
+}
+.activity-title.data-v-5bc67a41 {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.activity-description.data-v-5bc67a41 {
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+.activity-footer.data-v-5bc67a41 {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.activity-avatar.data-v-5bc67a41 {
+  width: 60rpx; /* 调整为你需要的大小 */
+  height: 60rpx; /* 调整为你需要的大小 */
+  border-radius: 50%;
+}
+.activity-info.data-v-5bc67a41 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10rpx; /* 调整为你需要的间距 */
+}
+.activity-source.data-v-5bc67a41 {
+  font-size: 28rpx;
+  color: rgb(93, 152, 247);
+}
+.activity-time.data-v-5bc67a41 {
+  font-size: 24rpx;
+  color: #aaaaaa;
+}
+
